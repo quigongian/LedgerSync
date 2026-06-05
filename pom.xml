@@ -2,11 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.5</version> <relativePath/> 
+        <version>3.2.5</version> 
+        <relativePath/> 
     </parent>
+    
     <groupId>com.ledgersync</groupId>
     <artifactId>dashboard</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -20,38 +23,42 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId> // For building web applications, including RESTful services
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId> // For server-side rendering of HTML templates
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId> // For integrating Spring Data JPA, which simplifies database access and ORM (We will be utilizing SQLite as our database)
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+        
         <dependency>
             <groupId>org.xerial</groupId>
-            <artifactId>sqlite-jdbc</artifactId> // JDBC driver for SQLite, allowing our application to connect to and interact with the SQLite database
+            <artifactId>sqlite-jdbc</artifactId>
             <version>3.45.2.0</version>
         </dependency>
+        
         <dependency>
-            <groupId>org.hibernate.community</groupId>
-            <artifactId>hibernate-sqlite</artifactId> // Hibernate dialect for SQLite, enabling Hibernate to generate appropriate SQL queries for SQLite databases
-            <version>6.4.4.Final</version>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-community-dialects</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId> // For testing support, including JUnit, Mockito, and Spring TestContext Framework. (Will likely use JUnit and Mockito alone, unsure yet) YES UNIT TESTING IS A MUST
-            <scope>test</scope>
-        </dependency>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope> </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <artifactId>maven-compiler-plugin</artifactId> // Configures the Java compiler settings, such as the source and target Java versions
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
         </plugins>
     </build>
 </project>
