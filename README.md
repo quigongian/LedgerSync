@@ -53,3 +53,16 @@ To ensure stable, testable delivery, the project is structured across three prog
 
 ### Phase 3: Compliance, Auditing & Access Control
 * **Objective:** Harden the application to meet strict financial security guidelines.
+
+---
+
+## How do I run it?
+
+* **Requirements:**
+    * **Maven 3.9.16**
+    * **Java 21**
+
+```
+mvn clean compile
+mvn spring-boot:run
+```
