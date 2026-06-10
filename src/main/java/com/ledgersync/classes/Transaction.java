@@ -13,6 +13,8 @@ import java.time.LocalDateTime;
 public class Transaction {
     
     public enum Status {
+        APPROVED,
+        FLAGGED,
         PENDING,
         COMPLETED,
         FAILED
